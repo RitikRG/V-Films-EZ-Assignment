@@ -1,0 +1,77 @@
+.services-section {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.services-heading{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0px;
+    h2{
+        font-family: 'Halant';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 30px;
+        margin: 0px;
+        margin-top: 30px;
+    }
+    img{
+        transform: translateY(-10px);
+        width: 45%;
+    }
+}
+
+.services-container{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 10px;
+
+    .film-production-div{
+        position: relative;
+        .paper-clip-1{
+            position: absolute;
+            width: 150px;
+            top:0px;
+        }
+        .film-production-image{
+            width: 320px;
+        }
+    }
+    .branding-div{
+        position: relative;
+        transform: translateY(30px);
+        .paper-clip-2{
+            position: absolute;
+            top:-10px;
+            left:30%;
+            width: 150px;
+        }
+        .branding-image{
+            width: 300px;
+        }
+    }
+    .art-curation-div{
+        position: relative;
+        .paper-clip-3{
+            position: absolute;
+            width: 150px;
+            right: 10px;
+        }
+        .art-curation-image{
+            width: 320px;
+        }
+    }
+}
+
+.services-section-bottom{
+    position: absolute;
+    bottom: 70px;
+    width: 100vw;
+    img{
+        width: 100%;
+    }
+}
