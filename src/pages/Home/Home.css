@@ -1,0 +1,20 @@
+.home-container {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  overflow-y: hidden;
+  width: 100vw;
+  height: 100vh;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #999 #f0f0f0;
+}
+
+/* Each child section fills the viewport */
+.page-section {
+  flex: 0 0 100vw;       /* exactly one screen width */
+  height: 100vh;         /* full height */
+  scroll-snap-align: start;
+  box-sizing: border-box;
+}

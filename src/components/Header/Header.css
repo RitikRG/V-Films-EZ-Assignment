@@ -1,0 +1,140 @@
+.app-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 251, 251, 0.35);
+  padding: 10px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  overflow: hidden;
+  margin-top: 10px;
+  img{
+    width: 100px;
+  }
+}
+
+
+
+/* Navigation Container */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  opacity: 0;
+
+  /* Animation */
+  transform: translateX(100%);
+  transition: all 0.4s ease-in-out;
+}
+
+/* Show menu when open */
+.nav-links.open {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Navigation Links */
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  position: relative;
+}
+
+.nav-links a:hover {
+  color: #007bff;
+}
+
+/* Let's Talk Button */
+.talk-btn {
+  background-color: var(--primary-orange);
+  border: none;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.3s ease;
+
+  img{
+    width: 24px;
+  }
+}
+
+.talk-btn:hover {
+  background-color: #d94c1f;
+}
+
+/* open btn */
+.open-btn, .close-btn{
+  background: transparent;
+  border: none;
+  opacity: 0;
+}
+
+.active{
+  opacity: 1;
+}
+.deactive{
+  opacity: 0;
+}
+
+/* Navbar svgs */
+.open-btn img, .close-btn img {
+  width: 42px;
+}
+
+/* Menu Icon */
+.menu-toggle {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Layout behavior */
+@media (max-width: 1200px) {
+  .nav-links {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    background: transparent;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    padding-right: 50px;
+    width: 60%;
+    transform: translateX(100%);
+  }
+
+  .nav-links.open {
+    transform: translateX(0);
+    box-shadow: -4px 0 12px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* For large desktops*/
+@media (min-width: 1201px) {
+  .nav-links {
+    position: absolute;
+    right: 40px;
+    top: 0;
+    height: 100%;
+    background: transparent;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 0;
+    transform: translateX(100%);
+  }
+
+  .nav-links.open {
+    transform: translateX(0);
+  }
+}

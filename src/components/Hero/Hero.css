@@ -1,0 +1,115 @@
+.hero-section {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  width: 100%;
+  height: 100%;
+  padding: 50px 100px;
+  box-sizing: border-box;
+}
+
+.hero-section-left {
+    flex: 1;
+    position: relative;   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px auto;
+    max-height: 500px;
+}
+.hero-section-right{
+    flex: 1;
+}
+
+
+
+/* Rotating background */
+.rotating-bg {
+  position: absolute;
+  height: 100%;
+  aspect-ratio: 1;
+  object-fit: contain;
+  animation: rotateBackground 30s linear infinite;
+}
+
+@keyframes rotateBackground {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Foreground logo text */
+.hero-left-text {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  font-weight: 500;
+  color: #333;
+  z-index: 2;
+  height: auto;
+
+  img{
+    width: 300px;
+  }
+}
+
+
+
+/* Right side */
+
+
+/* Right Section */
+.hero-section-right {
+  width: 50%;
+  text-align: center;
+  padding: 0 40px;
+  font-family: "Poppins", sans-serif;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  height: fit-content;
+}
+
+.hero-title {
+  font-family: "Island Moments", serif;
+  font-size: 70px;
+  font-weight:400;
+  color: var(--text-blue);
+  font-style: italic;
+  text-align: center;
+  margin: 0px;
+}
+
+
+
+.hero-categories {
+  font-size: 26px;
+  font-family: 'Halant', serif;
+  font-weight: 500;
+  color: var(--primary-orange);
+  margin-bottom: 25px;
+}
+
+
+
+
+.hero-categories .dot {
+  margin: 0 10px;
+  color: var(--primary-orange);
+}
+
+.hero-description {
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--text-gray);
+  max-width: 350px;
+  align-self: center;
+  white-space: pre-wrap;
+}
