@@ -71,12 +71,43 @@
 }
 .circular-design-container{
     position: absolute;
-    bottom: -120px;
+    bottom: 0px;
     right: 0px;
     width: 100%;
-    max-width: 200px;
+    max-width: 300px;
 
     img{
         width: 100%;
+    }
+}
+
+@media screen and (max-width: 490px) {
+    .player-container{
+        max-width: 350px;
+
+        .controls-holder-1{
+            top: 50%;
+            transform: translateY(-50%);
+            left: 10px;
+        }
+        .controls-holder-2{
+            top: 50%;
+            transform: translateY(-50%);
+            right: 10px;
+        }
+
+        .left-control, .right-control{
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+    .camera-container{
+        top: auto;
+        bottom: 150px;
+        left: 40px;
+        max-width: 100px;
+    }
+    .circular-design-container{
+        max-width: 250px;
     }
 }

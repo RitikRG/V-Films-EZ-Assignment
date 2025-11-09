@@ -70,7 +70,7 @@ export default function Contact() {
     <section className="contact-section">
         <div className="contact-left">
             <p>
-                Whether you have an idea, a question, or simply want to explore how V can work together, V’re just a message away.<br/>Let’s catch up over coffee.Great stories always begin with a good conversation
+                Whether you have an idea, a question, or simply want to explore how V can work together, V’re just a message away.<br/>Let’s catch up over coffee. Great stories always begin with a good conversation
             </p>
         </div>
         <div className="contact-right">

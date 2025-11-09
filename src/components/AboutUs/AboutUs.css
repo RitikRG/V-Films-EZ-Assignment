@@ -84,7 +84,7 @@
     .mountains-image{
         position: absolute;
         width: 400px;
-        bottom: 20px;
+        bottom: 0px;
         right: 20%;
     }
 
@@ -97,13 +97,15 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+    position: relative;
+    height: 100%;
   }
 
   .about-us-right {
     width: 100%;
     height: auto;
     padding: 0;
-    position: relative;
+    position: unset;
   }
 
   .about-us-right h1 {
@@ -141,25 +143,24 @@
     line-height: 1.6;
   }
 
-    .illustrations-container{
-        display: flex;
-        align-items: center;
-
-        img{
-            width: 10px;
-        }
-        .projects-image{
-            transform: translateX(35%);
-            z-index: 100;
-        }
-        .happy-clients-image{
-            z-index: 150;
-        }
-        .expert-team-image{
-            transform: translateX(-35%);
-            z-index: 200;
-        }
-    }
+  .about-us-left .illustrations-container{
+      justify-content: center;
+      img{
+        width: 30%;
+          flex: 1;
+      }
+      .projects-image{
+          transform: translateX(35%);
+          z-index: 100;
+      }
+      .happy-clients-image{
+          z-index: 150;
+      }
+      .expert-team-image{
+          transform: translateX(-35%);
+          z-index: 200;
+      }
+  }
 
   .about-us-section {
     height: auto;

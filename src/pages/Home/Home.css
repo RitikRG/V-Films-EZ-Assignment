@@ -4,17 +4,50 @@
   overflow-x: auto;
   overflow-y: hidden;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  scrollbar-width: thin;
-  scrollbar-color: #999 #f0f0f0;
+  scrollbar-width: none;
 }
 
-/* Each child section fills the viewport */
+.home-container::-webkit-scrollbar {
+  display: none; 
+}
+
+.custom-scrollbar {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 10px;
+  background: transparent;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.scroll-thumb {
+  height: 100%;
+  background: var(--primary-pink);
+  width: 0%;
+  border-radius: 4px;
+  transition: width 0.1s linear;
+}
+
 .page-section {
-  flex: 0 0 100vw;       /* exactly one screen width */
-  height: 100vh;         /* full height */
+  flex: 0 0 100vw;     
+  height: 100vh;        
   scroll-snap-align: start;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  .app-header {
+    flex: 0 0 auto; 
+  }
+
+  section {
+    flex: 1 1 auto;
+  }
 }

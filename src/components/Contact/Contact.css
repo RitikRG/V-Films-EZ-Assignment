@@ -17,7 +17,6 @@
 
 .contact-right{
     width: 50%;
-    /* height: 60vh; */
 }
 
 .contact-container {
@@ -98,12 +97,12 @@ textarea {
   display: flex;
   justify-content: center;
   gap: 20px;
-  color: #e36b2c;
+  color: var(--primary-orange);
   font-weight: 500;
 }
 
 .contact-info a {
-  color: #e36b2c;
+  color: var(--primary-orange);
   text-decoration: none;
 }
 
@@ -125,4 +124,46 @@ textarea {
     img{
         width: 100%;
     }
+}
+
+@media screen and (max-width: 490px) {
+  .contact-section{
+    flex-direction: column;
+    padding: 20px;
+    padding-top: 50px;
+    gap: 10px;
+  }
+  .contact-left{
+    width: 100%;
+    p{
+      background-color: white;
+      border-radius: 10px;
+      padding: 5px;
+      text-align: center;
+    }
+  }
+  .contact-right{
+    width: 100%;
+    padding: 0px 20px;
+    overflow: hidden;
+
+    .contact-container{
+      margin-top: 0px;
+      input, textarea{
+        width: 80%;
+      }
+
+      .btn{
+        font-size: 18px;
+      }
+    }
+  }
+  .circle-left{
+    max-width: 250px;
+    opacity: 0.5;
+    z-index: -1;
+  }
+  .circle-right{
+    opacity: 0.5;
+  }
 }

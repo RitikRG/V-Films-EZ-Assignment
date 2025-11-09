@@ -1,3 +1,4 @@
+/* Base Header */
 .app-header {
   display: flex;
   flex-direction: row;
@@ -7,44 +8,43 @@
   padding: 10px 40px;
   position: sticky;
   top: 0;
-  z-index: 100;
-  overflow: hidden;
+  z-index: 200; /* increased to ensure menu is above content */
   margin-top: 10px;
-  img{
+
+  /* REMOVE overflow hidden (this was hiding your dropdown) */
+  /* overflow: hidden; */
+
+  img {
     width: 100px;
   }
 }
 
-
-
-/* Navigation Container */
+/* Nav Links Base */
 .nav-links {
   display: flex;
   align-items: center;
   gap: 30px;
   opacity: 0;
-
-  /* Animation */
   transform: translateX(100%);
   transition: all 0.4s ease-in-out;
 }
 
-/* Show menu when open */
 .nav-links.open {
-    opacity: 1;
-    transform: translateX(0);
+  opacity: 1;
+  transform: translateX(0);
 }
 
-/* Navigation Links */
+/* Nav Links Styling */
 .nav-links a {
   text-decoration: none;
   color: #333;
   font-weight: 500;
   position: relative;
+  transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-  color: #007bff;
+  color: var(--text-blue);
 }
 
 /* Let's Talk Button */
@@ -61,44 +61,102 @@
   gap: 8px;
   transition: background 0.3s ease;
 
-  img{
+  img {
     width: 24px;
   }
 }
 
 .talk-btn:hover {
-  background-color: #d94c1f;
+  background-color: var(--primary-orange);
 }
 
-/* open btn */
-.open-btn, .close-btn{
+/* Menu toggle buttons */
+.open-btn,
+.close-btn {
   background: transparent;
   border: none;
   opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-.active{
+.active {
   opacity: 1;
 }
-.deactive{
+.deactive {
   opacity: 0;
 }
 
-/* Navbar svgs */
-.open-btn img, .close-btn img {
+.open-btn img,
+.close-btn img {
   width: 42px;
 }
 
-/* Menu Icon */
-.menu-toggle {
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+@media screen and (max-width: 490px) {
+  .app-header {
+    padding: 10px;
+    position: relative;
+
+    img {
+      width: 100px;
+    }
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 50vw;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: start;
+    background: rgba(255, 255, 255, 0.98);
+    gap: 25px;
+    padding: 40px;
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
+    border-radius: 12px 0 0 12px;
+
+    opacity: 0;
+    transform: translateX(100%);
+    pointer-events: none;
+    transition: transform 0.4s ease, opacity 0.3s ease;
+    z-index: 300;
+  }
+
+  /* When open — slide in smoothly */
+  .nav-links.open {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+  }
+
+  /* Dim the background slightly if you want a mobile overlay effect */
+  body.menu-open::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 250;
+  }
+
+  /* Menu buttons */
+  .open-btn img,
+  .close-btn img {
+    width: 30px;
+  }
+
+  .talk-btn {
+    img {
+      width: 20px;
+    }
+  }
 }
 
-/* Layout behavior */
-@media (max-width: 1200px) {
+
+@media (min-width: 491px) and (max-width: 1200px) {
   .nav-links {
     position: absolute;
     right: 0;
@@ -119,7 +177,7 @@
   }
 }
 
-/* For large desktops*/
+/* Large desktops */
 @media (min-width: 1201px) {
   .nav-links {
     position: absolute;
