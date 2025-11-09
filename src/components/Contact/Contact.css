@@ -166,4 +166,9 @@ textarea {
   .circle-right{
     opacity: 0.5;
   }
+  .contact-info {
+    margin-top: 15px;
+  }
+
+
 }

@@ -3,6 +3,8 @@ import "./Contact.css";
 import Circle1 from "../../assets/contact/circular-design.svg";
 import Circle2 from "../../assets/contact/circular-design-2.svg";
 import Header from "../Header/Header";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Contact() {
     const [formData, setFormData] = useState({
@@ -46,22 +48,39 @@ export default function Contact() {
         if (!validate()) return;
 
         setStatus("Submitting...");
-
         try {
-        const response = await fetch("https://your-api-endpoint.com/contact", {
+        const response = await fetch("https://vernanbackend.ezlab.in/api/contact-us/", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(formData),
         });
-
+        const data = await response.json();
         if (response.ok) {
-            setStatus("Thank you! Your message has been sent.");
+            setStatus("");
             setFormData({ name: "", email: "", phone: "", message: "" });
+            toast.success(data.message || "Form Submitted Successfully!", {
+                position: "bottom-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                theme: "colored",
+            });
         } else {
-            setStatus("Failed to send message. Please try again later.");
+            setStatus("");
+            toast.error(data.message || "Failed to send message. Please try again.", {
+                position: "bottom-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                theme: "colored",
+            });
         }
         } catch (error) {
-        setStatus("Error connecting to server.");
+            setStatus("");
+            toast.error("Error connecting to server. Please try again later.", {
+                position: "bottom-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                theme: "colored",
+            });
         }
     };
   return (
@@ -141,6 +160,7 @@ export default function Contact() {
             <img src={Circle2}/>
         </div>
     </section>
+    <ToastContainer />
     </>
   );
 }
